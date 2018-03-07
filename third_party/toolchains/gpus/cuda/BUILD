@@ -122,8 +122,8 @@ cc_library(
 
 cc_library(
     name = "cudnn",
-    srcs = ["cuda/lib/libcudnn.so.7"],
-    data = ["cuda/lib/libcudnn.so.7"],
+    srcs = ["cuda/lib64/libcudnn.so.7"],
+    data = ["cuda/lib64/libcudnn.so.7"],
     includes = [
         ".",
         "cuda/include",
@@ -1272,7 +1272,7 @@ genrule(
         "cuda/lib64/libcupti.so.9.1",
     ],
     cmd = """
-if [ -d "$(@D)/extras" ]; then rm $(@D)/extras -drf; fi && if [ -d "$(@D)/include" ]; then rm $(@D)/include -drf; fi && if [ -d "$(@D)/lib" ]; then rm $(@D)/lib -drf; fi && if [ -d "$(@D)/nvvm" ]; then rm $(@D)/nvvm -drf; fi && cp "/usr/local/cuda-9.1/targets/x86_64-linux/lib/stubs/libcuda.so" "$(@D)/cuda/lib64/stubs/libcuda.so" && cp "/usr/local/cuda-9.1/targets/x86_64-linux/lib/libcudart.so.9.1.85" "$(@D)/cuda/lib64/libcudart.so.9.1" && cp "/usr/local/cuda-9.1/targets/x86_64-linux/lib/libcudart_static.a" "$(@D)/cuda/lib64/libcudart_static.a" && cp "/usr/local/cuda-9.1/targets/x86_64-linux/lib/libcublas.so.9.1.85" "$(@D)/cuda/lib64/libcublas.so.9.1" && cp "/usr/local/cuda-9.1/targets/x86_64-linux/lib/libcusolver.so.9.1.85" "$(@D)/cuda/lib64/libcusolver.so.9.1" && cp "/usr/local/cuda-9.1/targets/x86_64-linux/lib/libcurand.so.9.1.85" "$(@D)/cuda/lib64/libcurand.so.9.1" && cp "/usr/local/cuda-9.1/targets/x86_64-linux/lib/libcufft.so.9.1.85" "$(@D)/cuda/lib64/libcufft.so.9.1" && cp "/usr/lib/x86_64-linux-gnu/libcudnn.so.7.0.5" "$(@D)/cuda/lib64/libcudnn.so.7" && cp "/usr/local/cuda-9.1/extras/CUPTI/lib64/libcupti.so.9.1.85" "$(@D)/cuda/lib64/libcupti.so.9.1"
+if [ -d "$(@D)/extras" ]; then rm $(@D)/extras -drf; fi && if [ -d "$(@D)/include" ]; then rm $(@D)/include -drf; fi && if [ -d "$(@D)/lib" ]; then rm $(@D)/lib -drf; fi && if [ -d "$(@D)/nvvm" ]; then rm $(@D)/nvvm -drf; fi && cp "/usr/local/cuda-9.1/targets/x86_64-linux/lib/stubs/libcuda.so" "$(@D)/cuda/lib64/stubs/libcuda.so" && cp "/usr/local/cuda-9.1/targets/x86_64-linux/lib/libcudart.so.9.1.85" "$(@D)/cuda/lib64/libcudart.so.9.1" && cp "/usr/local/cuda-9.1/targets/x86_64-linux/lib/libcudart_static.a" "$(@D)/cuda/lib64/libcudart_static.a" && cp "/usr/local/cuda-9.1/targets/x86_64-linux/lib/libcublas.so.9.1.85" "$(@D)/cuda/lib64/libcublas.so.9.1" && cp "/usr/local/cuda-9.1/targets/x86_64-linux/lib/libcusolver.so.9.1.85" "$(@D)/cuda/lib64/libcusolver.so.9.1" && cp "/usr/local/cuda-9.1/targets/x86_64-linux/lib/libcurand.so.9.1.85" "$(@D)/cuda/lib64/libcurand.so.9.1" && cp "/usr/local/cuda-9.1/targets/x86_64-linux/lib/libcufft.so.9.1.85" "$(@D)/cuda/lib64/libcufft.so.9.1" && cp "/usr/lib/x86_64-linux-gnu/libcudnn.so.7" "$(@D)/cuda/lib64/libcudnn.so.7" && cp "/usr/local/cuda-9.1/extras/CUPTI/lib64/libcupti.so.9.1.85" "$(@D)/cuda/lib64/libcupti.so.9.1"
    """,
 )
 
